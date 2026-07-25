@@ -1,6 +1,6 @@
 # Homelab Server — Lenovo ThinkCentre M75q Gen 2 Tiny
 
-A compact Proxmox VE homelab running a media server (Jellyfin) and self-hosted photo/video management (Immich), built on a low-power Tiny PC.
+A general-purpose Proxmox VE homelab built on a low-power Tiny PC. The goal is a flexible platform for media serving, home automation, and personal research / experimentation.
 
 ## Overview
 
