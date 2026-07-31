@@ -16,36 +16,9 @@ A general-purpose Proxmox VE homelab built on a low-power Tiny PC. The goal is a
 
 ## Architecture
 
-```
-                 ┌─────────────────────┐
-                 │    Home network     │
-                 │   Ethernet (CAT6)   │
-                 └──────────┬──────────┘
-                             │
-┌────────────────────────────▼────────────────────────────┐
-│           Lenovo M75q Gen 2 · Proxmox VE 9.2             │
-│                                                            │
-│  ┌───────────────────────┐   ┌──────────────────────┐    │
-│  │   NVMe SSD 1TB         │──▶│  WD Blue 1TB, 2.5in  │    │
-│  │   OS + container       │   │  Nightly backup       │    │
-│  │   configs              │   │  target                │    │
-│  └───────────┬────────────┘   └──────────────────────┘    │
-│              │                                             │
-│  ┌───────────▼──────────────────────────────────────┐    │
-│  │              LXC containers                        │    │
-│  │  ┌──────────────────┐   ┌──────────────────────┐  │    │
-│  │  │    Jellyfin       │   │      Immich           │  │    │
-│  │  │  Media server      │   │  Photos and videos    │  │    │
-│  │  └──────────────────┘   └──────────────────────┘  │    │
-│  └───────────────────────┬────────────────────────────┘    │
-└──────────────────────────┼─────────────────────────────────┘
-                            │
-                 ┌──────────▼──────────┐
-                 │  Exos X18, 18TB      │
-                 │  USB dock (powered)  │
-                 │  Media library        │
-                 └──────────────────────┘
-```
+![Homelab architecture diagram](./architecture-diagram.svg)
+
+> Jellyfin is the only container live today (solid green). Immich, Home Assistant, Nextcloud, the dashboard, and the reverse proxy are planned next steps (dashed gray) — each will move into its own "live" section as it's deployed.
 
 ## Storage layout
 
